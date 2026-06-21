@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eco Shastra | The Economics Society — Sri Aurobindo College (Evening)</title>
+<meta name="description" content="Eco Shastra is the official Economics Society of Sri Aurobindo College (Evening), University of Delhi — promoting academic excellence, leadership and economic awareness among students.">
+<meta name="theme-color" content="#0a0a0a">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Eco Shastra — The Economics Society, Sri Aurobindo College (Evening)">
+<meta property="og:description" content="Exploring Economics. Creating Opportunities. Building Leaders.">
+<meta property="og:type" content="website">
+
+<!-- Favicon: gold monogram seal, inline so no extra file is required -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230a0a0a'/%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23c9a227' stroke-width='2'/%3E%3Ctext x='50' y='63' font-family='Georgia,serif' font-size='38' fill='%23c9a227' text-anchor='middle'%3EES%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===================================================================
+   ECO SHASTRA — design tokens
+   Palette: near-black, warm ivory, antique gold (per brand brief)
+   Type: Fraunces (display serif) + Inter (body) + Space Mono (eyebrows/data)
+   =================================================================== */
+:root{
+  --black:#0a0a0a;
+  --charcoal:#151311;
+  --charcoal-2:#1d1a17;
+  --ivory:#f9f6ee;
+  --ivory-2:#f1ecdf;
+  --white:#ffffff;
+  --gold:#c9a227;
+  --gold-bright:#e3c25c;
+  --gold-deep:#8f7115;
+  --gold-soft:rgba(201,162,39,0.13);
+  --ink:#171512;
+  --ink-soft:#5c5650;
+  --line-light:rgba(23,21,18,0.10);
+  --line-dark:rgba(255,255,255,0.12);
+  --serif:'Fraunces',serif;
+  --sans:'Inter',sans-serif;
+  --mono:'Space Mono',monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:0.001ms !important;transition-duration:0.001ms !important;}
+}
+body{
+  font-family:var(--sans);
+  background:var(--ivory);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+h1,h2,h3,h4{font-family:var(--serif);color:inherit;line-height:1.12;font-weight:600;}
+section{padding:7.5rem 0;position:relative;}
+.container{max-width:1180px;margin:0 auto;padding:0 1.5rem;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* section helpers */
+.section--black{background:var(--black);color:var(--ivory);}
+.section--ivory{background:var(--ivory);color:var(--ink);}
+.section--white{background:var(--white);color:var(--ink);}
+.eyebrow{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem;font-weight:700;
+}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--gold);}
+.head-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:3.2rem;}
+.head-row h2{font-size:clamp(1.9rem,3.4vw,2.7rem);max-width:560px;}
+.head-row p{max-width:420px;color:var(--ink-soft);font-size:1rem;}
+.section--black .head-row p{color:rgba(249,246,238,.65);}
+em{font-style:italic;color:var(--gold);font-family:var(--serif);}
+
+/* reveal-on-scroll */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 2rem;font-family:var(--sans);
+  font-weight:600;font-size:.92rem;border-radius:2px;transition:all .35s var(--ease);letter-spacing:.01em;
+}
+.btn-gold{background:var(--gold);color:var(--black);}
+.btn-gold:hover{background:var(--gold-bright);transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,162,39,.35);}
+.btn-line{border:1.5px solid var(--gold);color:var(--ivory);}
+.btn-line:hover{background:var(--gold);color:var(--black);}
+.btn-line.on-light{color:var(--ink);border-color:var(--ink);}
+.btn-line.on-light:hover{background:var(--ink);color:var(--ivory);}
+
+/* ===== MONOGRAM SEAL (placeholder logo — see note in HTML body) ===== */
+.seal{border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;}
+.seal::before{content:'';position:absolute;inset:5px;border:1px solid var(--gold);border-radius:50%;opacity:.55;}
+.seal span{font-family:var(--serif);color:var(--gold);font-weight:600;letter-spacing:.02em;}
+.seal-dark{background:var(--black);border:1.5px solid var(--gold);}
+.seal-nav{width:44px;height:44px;}
+.seal-nav span{font-size:1.05rem;}
+.seal-hero{width:84px;height:84px;}
+.seal-hero span{font-size:2rem;}
+.seal-foot{width:46px;height:46px;}
+.seal-foot span{font-size:1.1rem;}
+
+/* ===================== NAVBAR ===================== */
+#navbar{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-dark);transition:box-shadow .3s var(--ease);}
+#navbar.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.35);}
+.nav-inner{max-width:1180px;margin:0 auto;padding:0 1.5rem;height:76px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{display:flex;align-items:center;gap:.85rem;}
+.nav-brand-text{display:flex;flex-direction:column;line-height:1.18;}
+.nav-brand-text strong{font-family:var(--serif);color:var(--ivory);font-size:1.08rem;font-weight:600;}
+.nav-brand-text small{font-family:var(--mono);color:var(--gold);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:.2rem;}
+.nav-links a{padding:.55rem .95rem;font-size:.86rem;font-weight:500;color:rgba(249,246,238,.78);border-radius:2px;transition:color .25s,background .25s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(201,162,39,.08);}
+.nav-cta{display:none;}
+#hamburger{display:flex;flex-direction:column;gap:5px;padding:8px;}
+#hamburger span{width:24px;height:1.5px;background:var(--gold);border-radius:1px;transition:all .3s var(--ease);}
+#hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+#hamburger.open span:nth-child(2){opacity:0;}
+#hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+#mobile-menu{position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--black);z-index:999;
+  display:flex;flex-direction:column;padding:1.5rem;gap:.2rem;transform:translateX(100%);transition:transform .4s var(--ease);overflow-y:auto;}
+#mobile-menu.open{transform:translateX(0);}
+#mobile-menu a{padding:1.1rem .5rem;font-size:1.05rem;color:var(--ivory);border-bottom:1px solid var(--line-dark);font-family:var(--serif);}
+#mobile-menu a:hover{color:var(--gold);}
+
+@media(min-width:900px){
+  #hamburger{display:none;}
+  .nav-cta{display:inline-flex;}
+}
+@media(max-width:899px){
+  .nav-links{display:none;}
+}
+
+/* ===================== HERO ===================== */
+#hero{
+  background:var(--black);color:var(--ivory);min-height:100vh;display:flex;align-items:center;
+  padding-top:7rem;padding-bottom:5rem;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(201,162,39,.07) 1px,transparent 1px),
+                    linear-gradient(90deg,rgba(201,162,39,.07) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(ellipse 90% 70% at 50% 35%,#000 10%,transparent 75%);
+}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:900px;margin:0 auto;padding:0 1.5rem;}
+.hero-inner .seal-hero{margin:0 auto 2rem;}
+.hero-eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.6rem;}
+#hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:600;letter-spacing:-.01em;}
+#hero h1 .sub{display:block;font-size:clamp(1rem,2vw,1.3rem);font-weight:400;font-style:italic;color:rgba(249,246,238,.72);margin-top:.9rem;letter-spacing:0;}
+.hero-tagline{margin:2.1rem 0 2.6rem;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--ivory);font-family:var(--serif);font-weight:400;}
+.hero-tagline .dot{color:var(--gold);margin:0 .35rem;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+/* ticker chart — signature element */
+.ticker-wrap{position:absolute;left:0;right:0;bottom:0;height:160px;z-index:1;opacity:.85;}
+.ticker-wrap svg{width:100%;height:100%;}
+#ticker-line{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 3.2s var(--ease) .3s forwards;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+.ticker-fade{position:absolute;inset:0;background:linear-gradient(to top,var(--black) 0%,transparent 75%);}
+
+/* ===================== ABOUT ===================== */
+.about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start;}
+.about-wrap p{margin-bottom:1.3rem;color:var(--ink-soft);font-size:1.04rem;max-width:560px;}
+.mission-box{
+  background:var(--black);color:var(--ivory);padding:2.6rem;border-radius:3px;border:1px solid var(--gold);
+  position:relative;
+}
+.mission-box .eyebrow{margin-bottom:1rem;}
+.mission-box h3{font-size:1.5rem;margin-bottom:1rem;color:var(--ivory);}
+.mission-box p{color:rgba(249,246,238,.8);font-size:1rem;}
+@media(max-width:860px){.about-wrap{grid-template-columns:1fr;}}
+
+/* ===================== TEAM ===================== */
+#team{background:var(--black);color:var(--ivory);}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.6rem;}
+.team-card{
+  background:var(--charcoal);border:1px solid var(--line-dark);padding:2.1rem 1.4rem;text-align:center;border-radius:3px;
+  transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);
+}
+.team-card:hover{transform:translateY(-6px);border-color:var(--gold);background:var(--charcoal-2);}
+.team-card .seal{width:74px;height:74px;margin:0 auto 1.2rem;}
+.team-card .seal span{font-size:1.55rem;}
+.team-card h4{font-size:1.05rem;color:var(--ivory);margin-bottom:.35rem;font-weight:600;}
+.team-card .role{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+.team-card .rule{width:26px;height:1px;background:var(--gold);opacity:.5;margin:.85rem auto 0;}
+
+/* ===================== DEPARTMENTS ===================== */
+.dept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
+.dept-card{
+  background:var(--white);border:1px solid var(--line-light);padding:2.1rem;border-radius:3px;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);
+}
+.dept-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(23,21,18,.08);border-color:var(--gold);}
+.dept-card i{font-size:1.4rem;color:var(--gold);margin-bottom:1.1rem;display:block;}
+.dept-card h3{font-size:1.1rem;margin-bottom:.6rem;}
+.dept-card p{font-size:.92rem;color:var(--ink-soft);}
+
+/* ===================== EVENTS ===================== */
+#events{background:var(--black);color:var(--ivory);}
+.event-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;}
+.event-card{
+  background:var(--charcoal);border:1px solid var(--line-dark);padding:2.4rem;border-radius:3px;position:relative;
+  transition:transform .4s var(--ease),border-color .4s var(--ease);
+}
+.event-card:hover{transform:translateY(-6px);border-color:var(--gold);}
+.event-tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+  border:1px solid var(--gold);padding:.3rem .7rem;display:inline-block;border-radius:20px;margin-bottom:1.3rem;}
+.event-card h3{font-size:1.3rem;color:var(--ivory);margin-bottom:.7rem;}
+.event-card p{color:rgba(249,246,238,.65);font-size:.95rem;}
+
+/* ===================== KNOWLEDGE HUB ===================== */
+.hub-note{font-family:var(--mono);font-size:.82rem;color:var(--gold-deep);background:var(--gold-soft);
+  display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.1rem;border-radius:20px;margin-bottom:2.6rem;}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.4rem;}
+.hub-card{
+  background:var(--white);border:1px solid var(--line-light);padding:1.9rem;border-radius:3px;text-align:left;
+  transition:transform .35s var(--ease),border-color .35s var(--ease);
+}
+.hub-card:hover{transform:translateY(-4px);border-color:var(--gold);}
+.hub-card i{color:var(--gold);font-size:1.25rem;margin-bottom:1rem;}
+.hub-card h4{font-size:1rem;margin-bottom:.4rem;}
+.hub-card span{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+
+/* ===================== GALLERY ===================== */
+#gallery{background:var(--black);color:var(--ivory);}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.3rem;}
+.gallery-box{
+  aspect-ratio:4/3;border:1.5px dashed rgba(201,162,39,.45);border-radius:3px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.7rem;color:rgba(249,246,238,.45);transition:border-color .3s,color .3s;
+}
+.gallery-box:hover{border-color:var(--gold);color:var(--gold);}
+.gallery-box i{font-size:1.6rem;}
+.gallery-box span{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;}
+
+/* ===================== CONTACT ===================== */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;}
+.contact-card{
+  background:var(--white);border:1px solid var(--line-light);padding:2.3rem;border-radius:3px;text-align:center;
+  transition:transform .35s var(--ease),border-color .35s var(--ease);
+}
+.contact-card:hover{transform:translateY(-5px);border-color:var(--gold);}
+.contact-card i{font-size:1.6rem;color:var(--gold);margin-bottom:1rem;}
+.contact-card h4{font-size:1.02rem;margin-bottom:.4rem;}
+.contact-card p{font-size:.88rem;color:var(--ink-soft);word-break:break-word;}
+
+/* ===================== FOOTER ===================== */
+footer{background:var(--black);color:rgba(249,246,238,.7);padding:4rem 0 2rem;}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:2rem;padding-bottom:2.6rem;border-bottom:1px solid var(--line-dark);}
+.foot-brand{display:flex;align-items:center;gap:1rem;}
+.foot-brand-text strong{display:block;color:var(--ivory);font-family:var(--serif);font-size:1.15rem;}
+.foot-brand-text small{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;}
+.foot-social{display:flex;gap:.8rem;}
+.foot-social a{width:42px;height:42px;border:1px solid var(--line-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;}
+.foot-social a:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,162,39,.08);}
+.foot-bottom{padding-top:1.8rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.84rem;}
+.foot-bottom span{color:var(--gold);}
+
+/* ===== back to top ===== */
+#back-top{
+  position:fixed;right:1.4rem;bottom:1.4rem;width:46px;height:46px;border-radius:50%;background:var(--gold);
+  color:var(--black);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;
+  transform:translateY(10px);transition:all .35s var(--ease);z-index:500;
+}
+#back-top.visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+#back-top:hover{background:var(--gold-bright);}
+
+/* ===== responsive type scale ===== */
+@media(max-width:640px){
+  section{padding:5rem 0;}
+  .head-row{margin-bottom:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">
+      <!-- LOGO PLACEHOLDER:
+           No logo image file was supplied, so a gold monogram seal stands in for it.
+           To use the real Eco Shastra logo, replace the .seal <div> below with:
+           <img src="logo.png" alt="Eco Shastra logo" style="width:44px;height:44px;border-radius:50%;"> -->
+      <div class="seal seal-dark seal-nav"><span>ES</span></div>
+      <div class="nav-brand-text">
+        <strong>Eco Shastra</strong>
+        <small>Economics Society</small>
+      </div>
+    </a>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#departments">Departments</a>
+      <a href="#events">Events</a>
+      <a href="#knowledge-hub">Knowledge Hub</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-gold nav-cta">Get in Touch</a>
+    <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ MOBILE MENU ============ -->
+<div id="mobile-menu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#team" onclick="closeMobile()">Team</a>
+  <a href="#departments" onclick="closeMobile()">Departments</a>
+  <a href="#events" onclick="closeMobile()">Events</a>
+  <a href="#knowledge-hub" onclick="closeMobile()">Knowledge Hub</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="seal seal-dark seal-hero reveal in"><span>ES</span></div>
+    <p class="hero-eyebrow">Sri Aurobindo College (Evening) · University of Delhi</p>
+    <h1>Eco Shastra<span class="sub">The Economics Society</span></h1>
+    <p class="hero-tagline">Exploring Economics<span class="dot">·</span>Creating Opportunities<span class="dot">·</span>Building Leaders</p>
+    <div class="hero-btns">
+      <a href="#about" class="btn btn-gold">Explore Society</a>
+      <a href="#team" class="btn btn-line">Meet the Team</a>
+    </div>
+  </div>
+
+  <!-- signature element: a rising indicator line, nodding to the discipline of economics -->
+  <div class="ticker-wrap">
+    <svg viewBox="0 0 1200 160" preserveAspectRatio="none">
+      <path id="ticker-line" d="M0,130 L80,120 L160,135 L240,95 L320,105 L400,70 L480,85 L560,55 L640,68 L720,40 L800,52 L880,28 L960,38 L1040,15 L1120,22 L1200,5"
+        fill="none" stroke="#c9a227" stroke-width="2"/>
+    </svg>
+    <div class="ticker-fade"></div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section--ivory">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="reveal">
+        <p class="eyebrow">About the Society</p>
+        <h2>Where economic thought<br>meets <em>action</em>.</h2>
+        <p style="margin-top:1.6rem;">Eco Shastra is the official Economics Society of Sri Aurobindo College (Evening), University of Delhi.</p>
+        <p>The society promotes academic excellence, economic awareness, leadership development, creativity, and student engagement through events, discussions, workshops, competitions, and collaborative initiatives.</p>
+      </div>
+      <div class="mission-box reveal">
+        <p class="eyebrow" style="margin-bottom:1rem;">Our Mission</p>
+        <h3>A platform to learn, grow, and lead.</h3>
+        <p>To create a platform where students can learn, grow, network, and develop a deeper understanding of economics and the world around them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXECUTIVE TEAM ============ -->
+<section id="team">
+  <div class="container">
+    <div class="head-row reveal">
+      <div>
+        <p class="eyebrow">The Team</p>
+        <h2>Executive Council</h2>
+      </div>
+      <p>The students who plan, build, and run Eco Shastra — across leadership, content, design, outreach, and operations.</p>
+    </div>
+
+    <div class="team-grid">
+      <!-- Each card: initials seal + name + role. Replace seal with a photo if available. -->
+      <div class="team-card reveal"><div class="seal seal-dark"><span>DP</span></div><h4>Dyuti Prasad</h4><div class="rule"></div><p class="role">President</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>RB</span></div><h4>Rishab Baluja</h4><div class="rule"></div><p class="role">Vice President</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>ST</span></div><h4>Sanjana Tripathi</h4><div class="rule"></div><p class="role">General Secretary</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>SJ</span></div><h4>Shreyas Jain</h4><div class="rule"></div><p class="role">Joint Secretary</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>PP</span></div><h4>Pew Pew</h4><div class="rule"></div><p class="role">Joint Secretary</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>U</span></div><h4>Utsav</h4><div class="rule"></div><p class="role">Content Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>UR</span></div><h4>Udbhav Raaj</h4><div class="rule"></div><p class="role">Content Sub Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>N</span></div><h4>Nishika</h4><div class="rule"></div><p class="role">Graphics Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>P</span></div><h4>Pakhi</h4><div class="rule"></div><p class="role">Graphics Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>P</span></div><h4>Pragya</h4><div class="rule"></div><p class="role">Graphics Sub Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>A</span></div><h4>Adarsh</h4><div class="rule"></div><p class="role">PR Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>U</span></div><h4>Utkarsh</h4><div class="rule"></div><p class="role">PR Sub Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>A</span></div><h4>Abhii</h4><div class="rule"></div><p class="role">Marketing Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>R</span></div><h4>Rupali</h4><div class="rule"></div><p class="role">Marketing Sub Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>V</span></div><h4>Vanshika</h4><div class="rule"></div><p class="role">HR</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>P</span></div><h4>Piyush</h4><div class="rule"></div><p class="role">Creative Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>K</span></div><h4>Krishna</h4><div class="rule"></div><p class="role">Creative Sub Head</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>B</span></div><h4>Bhawna</h4><div class="rule"></div><p class="role">Social Media Manager</p></div>
+      <div class="team-card reveal"><div class="seal seal-dark"><span>SK</span></div><h4>Sudhanshu Kumar</h4><div class="rule"></div><p class="role">Event Manager</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPARTMENTS ============ -->
+<section id="departments" class="section--white">
+  <div class="container">
+    <div class="head-row reveal">
+      <div>
+        <p class="eyebrow">How We're Organised</p>
+        <h2>Departments</h2>
+      </div>
+      <p>Eight teams, each responsible for a distinct part of how Eco Shastra runs and shows up.</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card reveal"><i class="fas fa-pen-nib"></i><h3>Content Department</h3><p>Crafts the research, articles, and written material that carry Eco Shastra's intellectual voice.</p></div>
+      <div class="dept-card reveal"><i class="fas fa-palette"></i><h3>Graphics Department</h3><p>Designs the visual identity behind every poster, post, and campaign the society puts out.</p></div>
+      <div class="dept-card reveal"><i class="fas fa-handshake"></i><h3>Public Relations</h3><p>Builds and maintains relationships with faculty, partners, and other societies on Eco Shastra's behalf.</p></div>
+      <div class="dept-card reveal"><i class="fas fa-bullhorn"></i><h3>Marketing Department</h3><p>Plans outreach and drives visibility for every event and initiative across platforms.</p></div>
+      <div class="dept-card reveal"><i class="fas fa-users"></i><h3>Human Resources</h3><p>Manages internal coordination, member engagement, and team welfare within the society.</p></div>
+      <div class="dept-card reveal"><i class="fas fa-lightbulb"></i><h3>Creative Department</h3><p>Shapes the concepts and creative direction behind events, themes, and campaigns.</p></div>
+      <div class="dept-card reveal"><i class="fas fa-share-nodes"></i><h3>Social Media</h3><p>Runs Eco Shastra's online presence, keeping members and followers updated in real time.</p></div>
+      <div class="dept-card reveal"><i class="fas fa-calendar-check"></i><h3>Event Management</h3><p>Plans and executes the society's events from concept through to closing, on ground and online.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS & INITIATIVES ============ -->
+<section id="events">
+  <div class="container">
+    <div class="head-row reveal">
+      <div>
+        <p class="eyebrow">Events &amp; Initiatives</p>
+        <h2>What Eco Shastra runs</h2>
+      </div>
+      <p>The core events and learning initiatives that anchor the society's calendar.</p>
+    </div>
+    <div class="event-grid">
+      <div class="event-card reveal">
+        <span class="event-tag">Flagship Event</span>
+        <h3>Econverse</h3>
+        <p>The annual flagship economics event of Eco Shastra.</p>
+      </div>
+      <div class="event-card reveal">
+        <span class="event-tag">Competition</span>
+        <h3>Ecomania</h3>
+        <p>An interactive economics-based competition and engagement event.</p>
+      </div>
+      <div class="event-card reveal">
+        <span class="event-tag">Learning</span>
+        <h3>Workshops &amp; Seminars</h3>
+        <p>Skill development and learning sessions for students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KNOWLEDGE HUB ============ -->
+<section id="knowledge-hub" class="section--white">
+  <div class="container">
+    <div class="head-row reveal">
+      <div>
+        <p class="eyebrow">Knowledge Hub</p>
+        <h2>A growing resource shelf</h2>
+      </div>
+      <p>A dedicated space for materials that support members academically.</p>
+    </div>
+    <p class="hub-note reveal"><i class="fas fa-clock"></i> Resources will be updated regularly.</p>
+    <div class="hub-grid">
+      <div class="hub-card reveal"><i class="fas fa-book"></i><h4>Notes</h4><span>Coming soon</span></div>
+      <div class="hub-card reveal"><i class="fas fa-file-lines"></i><h4>Previous Year Questions</h4><span>Coming soon</span></div>
+      <div class="hub-card reveal"><i class="fas fa-briefcase"></i><h4>Internship Opportunities</h4><span>Coming soon</span></div>
+      <div class="hub-card reveal"><i class="fas fa-trophy"></i><h4>Competitions</h4><span>Coming soon</span></div>
+      <div class="hub-card reveal"><i class="fas fa-chart-line"></i><h4>Economics Resources</h4><span>Coming soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="container">
+    <div class="head-row reveal">
+      <div>
+        <p class="eyebrow">Gallery</p>
+        <h2>Moments from Eco Shastra</h2>
+      </div>
+      <p>Event photography will appear here as it becomes available.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-box reveal"><i class="fas fa-image"></i><span>Coming soon</span></div>
+      <div class="gallery-box reveal"><i class="fas fa-image"></i><span>Coming soon</span></div>
+      <div class="gallery-box reveal"><i class="fas fa-image"></i><span>Coming soon</span></div>
+      <div class="gallery-box reveal"><i class="fas fa-image"></i><span>Coming soon</span></div>
+      <div class="gallery-box reveal"><i class="fas fa-image"></i><span>Coming soon</span></div>
+      <div class="gallery-box reveal"><i class="fas fa-image"></i><span>Coming soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section--ivory">
+  <div class="container">
+    <div class="head-row reveal">
+      <div>
+        <p class="eyebrow">Get in Touch</p>
+        <h2>Connect with Eco Shastra</h2>
+      </div>
+      <p>Reach out through any of the channels below.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Replace the href values below with the society's real handles/email -->
+      <a href="https://instagram.com/ecoshastra" target="_blank" rel="noopener" class="contact-card reveal">
+        <i class="fab fa-instagram"></i><h4>Instagram</h4><p>@ecoshastra</p>
+      </a>
+      <a href="https://linkedin.com/company/ecoshastra" target="_blank" rel="noopener" class="contact-card reveal">
+        <i class="fab fa-linkedin"></i><h4>LinkedIn</h4><p>Eco Shastra</p>
+      </a>
+      <a href="mailto:ecoshastra@sacevening.du.ac.in" class="contact-card reveal">
+        <i class="fas fa-envelope"></i><h4>Email</h4><p>ecoshastra@sacevening.du.ac.in</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="seal seal-dark seal-foot"><span>ES</span></div>
+        <div class="foot-brand-text">
+          <strong>Eco Shastra</strong>
+          <small>The Economics Society of Sri Aurobindo College (Evening)</small>
+        </div>
+      </div>
+      <div class="foot-social">
+        <a href="https://instagram.com/ecoshastra" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/company/ecoshastra" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:ecoshastra@sacevening.du.ac.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 <span>Eco Shastra</span>. All Rights Reserved.</p>
+      <p>Sri Aurobindo College (Evening), University of Delhi</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+// ===== mobile menu =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', open);
+});
+function closeMobile(){
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', false);
+}
+
+// ===== navbar shadow + back-to-top on scroll =====
+const navbar = document.getElementById('navbar');
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 12);
+  backTop.classList.toggle('visible', window.scrollY > 420);
+}, { passive: true });
+backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ===== active nav link on scroll =====
+const sections = document.querySelectorAll('section[id], header[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+  navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+}, { passive: true });
+
+// ===== scroll reveal =====
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
