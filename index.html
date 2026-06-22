@@ -250,7 +250,12 @@ section{padding:110px 0; position:relative;}
   z-index:1050; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px;
   opacity:0; visibility:hidden; transition:opacity .4s var(--ease), visibility .4s;
 }
-.mobile-menu.open{ opacity:1; visibility:visible; }
+.mobile-menu.open{
+    opacity:1;
+    visibility:visible;
+    background:red !important;
+    z-index:99999 !important;
+}
 .mobile-menu a{ font-family:'Sora',sans-serif; font-size:1.5rem; font-weight:600; color:var(--text-primary); }
 .mobile-menu a:hover{ color:var(--cyan); text-shadow:0 0 20px var(--cyan); }
 
