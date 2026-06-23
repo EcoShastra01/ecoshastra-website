@@ -237,7 +237,16 @@ section{padding:110px 0; position:relative;}
 
 .nav-cta{ display:flex; align-items:center; gap:18px; }
 .nav-cta .btn{ padding:11px 22px; font-size:0.88rem; }
-.burger{ display:none; flex-direction:column; gap:5px; width:26px; z-index:1100; }
+.burger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    width:26px;
+    z-index:100001;
+    position:fixed;
+    top:25px;
+    right:20px;
+}
 .burger span{ height:2px; background:var(--cyan); border-radius:2px; transition:all .35s var(--ease); width:100%; }
 .burger.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 .burger.open span:nth-child(2){ opacity:0; }
