@@ -1,0 +1,7 @@
+# robots.txt — Eco Shastra
+# https://ecoshastra01.github.io/ecoshastra-website/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ecoshastra01.github.io/ecoshastra-website/sitemap.xml
