@@ -1,0 +1,7 @@
+# robots.txt — Eco Shastra
+# https://ecoshastra.online/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://ecoshastra.online/sitemap.xml
